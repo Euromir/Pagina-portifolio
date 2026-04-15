@@ -205,7 +205,7 @@ const vhsMaterial = new THREE.ShaderMaterial({
     uniforms: {
         tDiffuse: { value: renderTarget.texture },
         time: { value: 0 },
-        noiseIntensity: { value: 0.4 },        // Intensidade do Ruído
+        noiseIntensity: { value: 0.2 },        // Intensidade do Ruído
         chromaticAberration: { value: 0.001 }, // 0.1 do print (adaptado para escala matemática UV)
         darkOpacity: { value: 0.5 }            // Opacidade Escura
     },
@@ -278,9 +278,9 @@ if (animToggle) {
     animToggle.addEventListener('click', () => {
         isPaused = !isPaused;
         if (isPaused) {
-            animToggle.innerHTML = '<i class="bi bi-play-fill"></i> PLAY';
+            animToggle.innerHTML = '<i class="bi bi-play-fill"></i> DESPAUSAR ANIMAÇÃO';
         } else {
-            animToggle.innerHTML = '<i class="bi bi-pause-fill"></i> PAUSAR';
+            animToggle.innerHTML = '<i class="bi bi-pause-fill"></i> PAUSAR ANIMAÇÃO';
         }
     });
 }
