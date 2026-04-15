@@ -1,61 +1,51 @@
-/* ... [Mantenha as variáveis de :root do código anterior] ... */
+/* ================= CONFIGURAÇÕES BÁSICAS ================= */
 :root {
-    /* Paleta Vaporwave / Synthwave */
-    --bg-color: #050014; /* Fundo do site (céu escuro) */
-    --surface-color: rgba(20, 0, 40, 0.7); /* Caixas translúcidas */
-    --primary-color: #00f3ff; /* Ciano Neon para títulos */
-    --secondary-color: #ff00ff; /* Magenta Neon para detalhes */
+    --bg-color: #050014;
+    --surface-color: rgba(20, 0, 40, 0.7);
+    --primary-color: #00f3ff;
+    --secondary-color: #ff00ff;
     --border-color: #ff00ff;
     --text-main: #ffffff;
     --text-body: #e0e0e0;
     --shadow-color: rgba(255, 0, 255, 0.4);
 }
 
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Orbitron', 'VT323', monospace;
+    font-size: 1.4rem;
+    scroll-behavior: smooth;
+}
+
+/* ================= BACKGROUND E CAMADAS ================= */
 #bg-canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Mantém atrás de tudo */
-    pointer-events: none; /* Evita que bloqueie cliques no site */
+    z-index: 0 !important;
+    pointer-events: none;
+    overflow: hidden;
 }
 
-/* Mantém o conteúdo acima do fundo */
-.navbar, .hero-section, section, footer {
+.navbar, .hero-section, #main-content, section, footer {
     position: relative;
     z-index: 2;
 }
 
-/* Transição de Início */
+/* ================= TRANSIÇÕES E ANIMAÇÕES ================= */
 .blink-text { animation: blink 1.5s infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
 .hidden-content { opacity: 0; visibility: hidden; height: 0; overflow: hidden; }
 .reveal-content { opacity: 1; visibility: visible; height: auto; transition: opacity 1s; }
 .hero-transition { transform: translateY(-50px); opacity: 0; transition: 1s; }
 
-body.light-mode {
-    /* MODO CLARO (Estilo Game Boy / Classic Console) */
-    --bg-color: #e0e8e0;
-    --surface-color: #ffffff;
-    --primary-color: #e60000; /* Vermelho Arcade */
-    --border-color: #000000;
-    --text-main: #000000;
-    --text-body: #333333;
-    --shadow-color: #889088;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    font-family: 'Orbitron', 'VT323', monospace;
-    font-size: 1.4rem;
-    scroll-behavior: smooth;
-    transition: background-color 0s; 
-}
-
-/* Tipografia Estrita em Pixel */
-h1, h2, h3, .brand-text, .section-title, .pixel-btn, .pixel-badge, .pixel-btn-small {
+/* ================= TIPOGRAFIA ================= */
+h1, h2, h3, .brand-text, .section-title, .pixel-btn, .pixel-badge, .pixel-btn-small, .card-title {
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
     line-height: 1.5;
@@ -64,35 +54,29 @@ h1, h2, h3, .brand-text, .section-title, .pixel-btn, .pixel-badge, .pixel-btn-sm
 .title-text { color: var(--text-main); }
 .text-body { color: var(--text-body) !important; line-height: 1.2; }
 .highlight-text { color: var(--primary-color); }
+.section-title { color: var(--primary-color); font-size: 1.5rem; margin-bottom: 40px; }
 
-/* Navegação - Menu UI */
+/* ================= NAVEGAÇÃO ================= */
 .pixel-nav {
     background-color: var(--bg-color) !important;
     border-bottom: 4px solid var(--border-color);
     padding: 15px 0;
 }
 
-.navbar-brand { 
-    font-size: 1.2rem; /* Aumentado */
-    color: var(--primary-color) !important; 
-}
-
-.nav-link { 
-    color: var(--text-main) !important; 
-    font-size: 1.1rem; /* Fonte aumentada! Estava 0.8rem */
-    margin: 0 15px; /* Espaço entre os links aumentado */
-    transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
-}
-.nav-link:hover {
-    color: var(--primary-color) !important;
-    text-shadow: 0 0 8px var(--primary-color);
-}
-
 .navbar-brand {
+    font-size: 1.2rem;
+    color: var(--primary-color) !important;
     transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.navbar-brand:hover {
+.nav-link {
+    color: var(--text-main) !important;
+    font-size: 1.1rem;
+    margin: 0 15px;
+    transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-brand:hover, .nav-link:hover {
     color: var(--primary-color) !important;
     text-shadow: 0 0 8px var(--primary-color);
 }
@@ -103,16 +87,18 @@ h1, h2, h3, .brand-text, .section-title, .pixel-btn, .pixel-badge, .pixel-btn-sm
     border-radius: 0;
 }
 
-.hero-section { padding: 160px 0 100px; }
+/* ================= HERO SECTION ================= */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
 h1.display-4 { font-size: 3rem; }
 
-.section-title {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-}
-
-/* Caixas de Texto (RPG Text Box Style) */
+/* ================= COMPONENTES (CAIXAS, CARDS E IMAGENS) ================= */
 .pixel-box, .pixel-card {
     background-color: var(--surface-color);
     backdrop-filter: blur(5px);
@@ -120,27 +106,7 @@ h1.display-4 { font-size: 3rem; }
     box-shadow: 0 0 10px var(--shadow-color);
 }
 
-/* Placeholder da Imagem (Espaço Vazio Estilizado) */
-.pixel-image-placeholder {
-    background-color: transparent;
-    border: 4px dashed var(--border-color); /* Borda tracejada indicando slot vazio */
-    min-height: 350px; /* Altura para combinar com o texto */
-    height: 100%;
-    box-shadow: 8px 8px 0px var(--shadow-color);
-    transition: transform 0.1s;
-}
-
-/* Para quando você for colocar a imagem real, você pode usar esta classe na tag <img> */
-.pixel-image-real {
-    width: 100%;
-    height: auto;
-    border: 4px solid var(--border-color);
-    box-shadow: 8px 8px 0px var(--shadow-color);
-    image-rendering: pixelated; /* Mantém a imagem "crocante" */
-}
-
 .pixel-card {
-    background-color: var(--surface-color);
     border: 4px solid var(--border-color);
     box-shadow: 8px 8px 0px var(--shadow-color);
     transition: transform 0.1s;
@@ -153,9 +119,24 @@ h1.display-4 { font-size: 3rem; }
 }
 
 .card-title {
-    font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
     color: var(--primary-color);
+}
+
+.pixel-image-placeholder {
+    background-color: transparent;
+    border: 4px dashed var(--border-color);
+    min-height: 350px;
+    height: 100%;
+    box-shadow: 8px 8px 0px var(--shadow-color);
+}
+
+.pixel-image-real {
+    width: 100%;
+    height: auto;
+    border: 4px solid var(--border-color);
+    box-shadow: 8px 8px 0px var(--shadow-color);
+    image-rendering: pixelated;
 }
 
 .pixel-badge {
@@ -165,75 +146,50 @@ h1.display-4 { font-size: 3rem; }
     padding: 10px 15px;
     border: 2px solid var(--border-color);
     box-shadow: 4px 4px 0px var(--shadow-color);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, color 0.2s;
+    cursor: default;
 }
 
-/* Correção rigorosa do alinhamento do Botão e Ícones */
-.pixel-btn {
+.pixel-badge:hover {
+    transform: translateY(-4px);
+    box-shadow: 4px 4px 0px var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* ================= BOTÕES ================= */
+.pixel-btn, .itch-project-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     border: 3px solid var(--primary-color);
     color: var(--primary-color);
-    padding: 15px 25px;
-    text-decoration: none;
     background-color: var(--surface-color);
     box-shadow: 4px 4px 0 var(--secondary-color);
     transition: all 0.1s ease;
-    line-height: 1; /* Impede que o texto empurre o botão pra baixo */
+    text-decoration: none;
+    line-height: 1;
 }
 
-.pixel-btn i {
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    line-height: 0; /* Remove o espaçamento fantasma do ícone */
-}
+.pixel-btn { padding: 15px 25px; }
+.itch-project-btn { width: 100%; margin-top: 14px; padding: 15px 25px; text-shadow: 0 0 5px var(--primary-color); }
 
-.pixel-btn:hover {
+.pixel-btn i { font-size: 1.4rem; display: flex; align-items: center; justify-content: center; margin: 0; line-height: 0; }
+
+.pixel-btn:hover, .itch-project-btn:hover {
     background: rgba(0, 243, 255, 0.1);
     color: var(--text-main);
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0 var(--secondary-color), 0 0 15px var(--primary-color);
-}
-
-.pixel-btn:active {
-    background: var(--primary-color);
-    color: #000;
-    transform: translate(4px, 4px);
-    box-shadow: 0 0 0 transparent;
-}
-
-.itch-project-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    margin-top: 14px;
-    padding: 15px 25px;
-    border: 3px solid var(--primary-color);
-    background-color: var(--surface-color);
-    color: var(--primary-color);
-    text-decoration: none;
-    line-height: 1;
-    box-shadow: 4px 4px 0 var(--secondary-color);
-    transition: all 0.1s ease;
-    text-shadow: 0 0 5px var(--primary-color);
 }
 
 .itch-project-btn:hover {
-    background: rgba(0, 243, 255, 0.1);
-    color: var(--text-main);
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 var(--secondary-color), 0 0 15px var(--primary-color);
     border-color: var(--primary-color);
     text-shadow: 0 0 8px var(--primary-color);
 }
 
-.itch-project-btn:active {
+.pixel-btn:active, .itch-project-btn:active {
     background: var(--primary-color);
     color: #000;
     transform: translate(4px, 4px);
@@ -243,13 +199,13 @@ h1.display-4 { font-size: 3rem; }
 .pixel-btn-small {
     background-color: var(--bg-color);
     color: var(--primary-color);
-    font-size: 0.8rem; /* Aumentado um pouco */
+    font-size: 0.8rem;
     padding: 10px 15px;
     border: 2px solid var(--border-color);
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px; /* Espaço entre o ícone e o texto */
+    gap: 8px;
     box-shadow: 4px 4px 0 var(--secondary-color);
     transition: all 0.1s ease;
 }
@@ -270,100 +226,23 @@ h1.display-4 { font-size: 3rem; }
     box-shadow: 0 0 0 transparent;
 }
 
-.itch-embed { 
-    width: 100%; 
-    height: 167px; 
-    border: 2px solid var(--border-color); 
-    image-rendering: pixelated; 
+/* ================= EMBEDS E ITCH.IO ================= */
+.itch-embed {
+    width: 100%;
+    height: 167px;
+    border: 2px solid var(--border-color);
+    image-rendering: pixelated;
 }
 
-ul.custom-list {
-    text-align: left;
-    list-style-type: square;
-    padding-left: 20px;
-}
-
-footer {
-    background-color: var(--bg-color);
-    padding: 40px 0;
-    border-top: 4px solid var(--border-color);
-}
-
-/* Media Query para Tablets */
-@media (max-width: 768px) {
-    h1.display-4 {
-        font-size: 1.8rem;
-    }
-    
-    .pixel-nav .navbar-brand {
-        font-size: 0.9rem;
-    }
-    
-    .nav-link {
-        font-size: 0.85rem;
-        margin: 5px 0;
-    }
-
-    .section-title {
-        font-size: 1.1rem;
-    }
-
-    .pixel-box, .pixel-card {
-        padding: 15px;
-        font-size: 1.1rem;
-    }
-
-    .hero-section {
-        padding: 100px 0 60px;
-    }
-
-    /* Empilha as colunas de contato e projetos */
-    .pixel-btn {
-        width: 100%;
-        justify-content: center;
-        font-size: 0.75rem;
-    }
-    
-    .pixel-image-placeholder {
-        min-height: 200px;
-        margin-bottom: 20px;
-    }
-}
-
-/* Ajustes para telas muito pequenas (Mobile Portrait) */
-@media (max-width: 480px) {
-    body {
-        font-size: 1.2rem;
-    }
-    
-    .pixel-badge {
-        font-size: 0.5rem;
-        padding: 5px 8px;
-    }
-}
-
-/* Garante que o Canvas sempre cubra o fundo sem scroll horizontal */
-#bg-canvas {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-
+/* ================= CARROSSEL CUSTOMIZADO ================= */
 .custom-carousel-btn {
-    width: 50px; /* Limita a largura exata da area clicavel para nao cobrir os iframes */
+    width: 50px;
     opacity: 0.8;
     transition: opacity 0.2s, transform 0.2s;
     z-index: 10;
 }
-
-/* Empurra as setas fisicamente para fora da area dos cards */
-.carousel-control-prev {
-    left: -50px;
-}
-
-.carousel-control-next {
-    right: -50px;
-}
+.carousel-control-prev { left: -50px; }
+.carousel-control-next { right: -50px; }
 
 .custom-carousel-btn:hover {
     opacity: 1;
@@ -371,73 +250,38 @@ footer {
     transform-origin: center center;
 }
 
-#contato .d-flex {
-    padding-bottom: 12px;
-    padding-right: 12px;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    /* Troca as setas padrão do Bootstrap pela cor primária (neon) do site */
+.carousel-control-prev-icon, .carousel-control-next-icon {
     filter: drop-shadow(0 0 5px var(--primary-color)) sepia(100%) hue-rotate(180deg) saturate(500%);
     width: 2.5rem;
     height: 2.5rem;
 }
 
-/* Adiciona margens extras no celular para as setas não encostarem no card */
+/* ================= UTILITÁRIOS ================= */
+#contato .d-flex { padding-bottom: 12px; padding-right: 12px; }
+
+footer {
+    background-color: var(--bg-color);
+    padding: 40px 0;
+    border-top: 4px solid var(--border-color);
+}
+
+.copyright-symbol {
+    font-family: 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans Symbols', sans-serif;
+}
+
+/* ================= MEDIA QUERIES ================= */
 @media (max-width: 768px) {
-    .pixel-card.mx-4 {
-        margin-left: 2.5rem !important;
-        margin-right: 2.5rem !important;
-    }
+    h1.display-4 { font-size: 1.8rem; }
+    .pixel-nav .navbar-brand { font-size: 0.9rem; }
+    .nav-link { font-size: 0.85rem; margin: 5px 0; }
+    .section-title { font-size: 1.1rem; }
+    .pixel-box, .pixel-card { padding: 15px; font-size: 1.1rem; }
+    .hero-section { height: auto; padding: 100px 0 60px; } /* Ajuste de altura para mobile */
+    .pixel-btn { width: 100%; justify-content: center; font-size: 0.75rem; }
+    .pixel-image-placeholder { min-height: 200px; margin-bottom: 20px; }
 }
 
-/* ==========================================
-   CORREÇÕES DE LAYOUT E EFEITOS NEON
-========================================== */
-
-/* 1. Garante a ordem correta das camadas para o Canvas, Overlay e Site */
-body { margin: 0; background-color: var(--bg-color); }
-#bg-canvas { z-index: 0 !important; }
-.bg-overlay { z-index: 1 !important; }
-.navbar, .hero-section, #main-content { position: relative; z-index: 2; }
-
-/* 2. Centraliza o texto do Menu Inicial perfeitamente na tela */
-.hero-section {
-    height: 100vh; /* Ocupa 100% da altura da tela */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-}
-
-/* 3. Efeito Hover Interativo nas Competências (Badges) */
-.pixel-badge {
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, color 0.2s;
-    cursor: default; /* Mostra que é interativo */
-}
-.pixel-badge:hover {
-    transform: translateY(-4px); /* Pula pra cima */
-    box-shadow: 4px 4px 0px var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-}
-
-/* 4. Física de Fliperama para Botões Menores (PAUSAR / Menu) */
-.pixel-btn-small {
-    transition: all 0.1s ease;
-}
-.pixel-btn-small:hover {
-    background: rgba(0, 243, 255, 0.1);
-    color: var(--text-main);
-    transform: translate(-2px, -2px); /* Eleva o botão */
-    box-shadow: 4px 4px 0 var(--secondary-color), 0 0 10px var(--primary-color);
-    border-color: var(--primary-color);
-}
-.pixel-btn-small:active {
-    background: var(--primary-color);
-    color: #000;
-    transform: translate(2px, 2px); /* Afunda o botão */
-    box-shadow: 0 0 0 transparent; /* Remove a sombra */
+@media (max-width: 480px) {
+    body { font-size: 1.2rem; }
+    .pixel-badge { font-size: 0.5rem; padding: 5px 8px; }
 }

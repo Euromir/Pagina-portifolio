@@ -1,9 +1,8 @@
-<!DOCTYPE html> <!-- Vinicius Rubim Apolonio -->
-<html lang="pt-BR">
+<!DOCTYPE html> <html lang="pt-BR"> <!-- Vinicius Rubim Apolonio -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sly Frog | Game Developer</title>
+    <title>Portfólio de Vinicius Rubim / Sly Frog</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,9 +14,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Fundo animado e camada de contraste para dar profundidade à página -->
     <canvas id="bg-canvas"></canvas>
-    <div class="bg-overlay"></div>
 
+    <!-- Barra superior de navegação para acesso rápido às seções do portfólio -->
     <nav class="navbar navbar-expand-lg fixed-top pixel-nav">
         <div class="container">
             <a class="navbar-brand brand-text" href="#">Vinicius Rubim / Sly Frog</a>
@@ -41,6 +41,7 @@
         </div>
     </nav>
 
+    <!-- Hero inicial com o título principal e a chamada para começar -->
     <header class="hero-section text-center" id="sobre">
         <div class="container">
             <h1 class="display-4 fw-bold title-text">Portfólio</h1>
@@ -48,15 +49,17 @@
         </div>
     </header>
 
+    <!-- Conteúdo principal que aparece depois da interação inicial -->
     <div id="main-content" class="hidden-content">
         
+        <!-- Apresentação pessoal e do estúdio -->
         <section class="container pt-5 mb-5 pb-5" id="quem-sou">
-            
+            <!-- Bloco de introdução sobre o perfil profissional -->
             <h2 class="section-title text-center">Sobre mim</h2>
             <div class="row justify-content-center mt-4 g-4 align-items-stretch">
                 <div class="col-md-4 col-lg-3">
                     <div class="pixel-image-placeholder d-flex align-items-center justify-content-center" style="min-height: 100%;">
-                        <img src="imgs/Eu.png" alt="Imagem de apresentação do portfólio" class="pixel-image-real">
+                        <img src="imgs/Eu.png" alt="Imagem de apresentação do portfólio" class="pixel-image-real" onerror="this.onerror=null; this.src='https://placehold.co/400x400/140028/00f3ff?text=Foto+Indisponivel'">
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6">
@@ -68,6 +71,7 @@
                 </div>
             </div>
 
+            <!-- Lista de habilidades e ferramentas principais -->
             <div class="mt-4 mb-5 text-center">
                 <h3 class="highlight-text title-text fs-5 mb-4">Minhas Competências</h3>
                 <div class="d-flex justify-content-center flex-wrap gap-2">
@@ -82,11 +86,12 @@
                 </div>
             </div>
 
+            <!-- Descrição do estúdio independente criado pelo autor -->
             <h2 class="section-title text-center mt-5 pt-4">Meu Estúdio</h2>
             <div class="row justify-content-center mt-4 g-4 align-items-stretch">
                 <div class="col-md-4 col-lg-3">
                     <div class="pixel-image-placeholder d-flex align-items-center justify-content-center" style="min-height: 200px; height: 100%;">
-                        <img src="imgs/Sly Frog.png" alt="Imagem institucional do estúdio" class="pixel-image-real">
+                        <img src="imgs/Sly Frog.png" alt="Imagem institucional do estúdio" class="pixel-image-real" onerror="this.onerror=null; this.src='https://placehold.co/400x400/140028/00f3ff?text=Logo+Indisponivel'">
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6">
@@ -97,19 +102,20 @@
                     </div>
                 </div>
             </div>
-
         </section>
 
+        <!-- Mostra jogos publicados e trabalhos concluídos em formato de carrossel -->
         <section class="container pt-5 mb-5" id="jogos">
             <h2 class="section-title text-center">Meus projetos</h2>
             <div id="itchCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
                 <div class="carousel-inner" style="padding: 20px 0;">
                     
+                    <!-- Primeiro conjunto de projetos do carrossel -->
                     <div class="carousel-item active">
                         <div class="row g-4 justify-content-center px-4">
                             <div class="col-md-6 col-lg-6">
                                 <div class="pixel-card p-3 h-100">
-                                    <iframe class="itch-embed" frameborder="0" src="https://itch.io/embed/4345109?bg_color=161E1C&amp;fg_color=ffffff&amp;link_color=E0B313&amp;border_color=434b49" width="552" height="167"><a href="https://npcproductions.itch.io/central-do-rap">Central do Rap by npcproductions, Euromir, Ximbas, dirpi</a></iframe>
+                                    <iframe class="itch-embed" frameborder="0" loading="lazy" src="https://itch.io/embed/4345109?bg_color=161E1C&amp;fg_color=ffffff&amp;link_color=E0B313&amp;border_color=434b49"></iframe>
                                     <div class="card-body px-0 pb-0">
                                         <h5 class="card-title mt-3">Central do Rap</h5>
                                         <p class="card-text text-body small">3º Lugar na HugJam de 2026.</p>
@@ -121,7 +127,7 @@
                             </div>
                             <div class="col-md-6 col-lg-6">
                                 <div class="pixel-card p-3 h-100">
-                                    <iframe class="itch-embed" frameborder="0" src="https://itch.io/embed/3641165?bg_color=feeec7&amp;fg_color=742500&amp;link_color=a4062a&amp;border_color=805441" width="552" height="167"><a href="https://euromir.itch.io/ship-wreckers">Ship Wreckers by Euromir, TheAceDefective, Starbit, Ximbas</a></iframe>
+                                    <iframe class="itch-embed" frameborder="0" loading="lazy" src="https://itch.io/embed/3641165?bg_color=feeec7&amp;fg_color=742500&amp;link_color=a4062a&amp;border_color=805441"></iframe>
                                     <div class="card-body px-0 pb-0">
                                         <h5 class="card-title mt-3">Ship Wreckers</h5>
                                         <p class="card-text text-body small">Jogo de luta multiplayer local até 4 jogadores.</p>
@@ -134,11 +140,12 @@
                         </div>
                     </div>
 
+                    <!-- Segundo conjunto de projetos do carrossel -->
                     <div class="carousel-item">
                         <div class="row g-4 justify-content-center px-4">
                             <div class="col-md-6 col-lg-6">
                                 <div class="pixel-card p-3 h-100">
-                                    <iframe class="itch-embed" frameborder="0" src="https://itch.io/embed/3155012?bg_color=e4a672&amp;fg_color=970004&amp;link_color=0766ff&amp;border_color=c0824e" width="552" height="167"><a href="https://npcproductions.itch.io/dusk-dueler">Dusk Dueler by npcproductions, Euromir, Starbit</a></iframe>
+                                    <iframe class="itch-embed" frameborder="0" loading="lazy" src="https://itch.io/embed/3155012?bg_color=e4a672&amp;fg_color=970004&amp;link_color=0766ff&amp;border_color=c0824e"></iframe>
                                     <div class="card-body px-0 pb-0">
                                         <h5 class="card-title mt-3">Dusk Dueler</h5>
                                         <p class="card-text text-body small">Jogo estilo arcade retrô.</p>
@@ -150,7 +157,7 @@
                             </div>
                             <div class="col-md-6 col-lg-6">
                                 <div class="pixel-card p-3 h-100">
-                                    <iframe class="itch-embed" frameborder="0" src="https://itch.io/embed/2802883?bg_color=c4c4c4&amp;fg_color=222222&amp;link_color=cf7500&amp;border_color=55433c" width="552" height="167"><a href="https://euromir.itch.io/dwarven-depths">Dwarven Depths by Euromir, TheAceDefective, Starbit</a></iframe>
+                                    <iframe class="itch-embed" frameborder="0" loading="lazy" src="https://itch.io/embed/2802883?bg_color=c4c4c4&amp;fg_color=222222&amp;link_color=cf7500&amp;border_color=55433c"></iframe>
                                     <div class="card-body px-0 pb-0">
                                         <h5 class="card-title mt-3">Dwarven Depths</h5>
                                         <p class="card-text text-body small">Jogo inspirado em vampire survivors.</p>
@@ -163,11 +170,12 @@
                         </div>
                     </div>
 
+                    <!-- Terceiro conjunto de projetos do carrossel -->
                     <div class="carousel-item">
                         <div class="row g-4 justify-content-center px-4">
                             <div class="col-md-6 col-lg-6">
                                 <div class="pixel-card p-3 h-100">
-                                    <iframe class="itch-embed" frameborder="0" src="https://itch.io/embed/4256333?bg_color=4f8193&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=7e97bf" width="552" height="167"><a href="https://euromir.itch.io/project-cubot">Project Cubot by Euromir</a></iframe>
+                                    <iframe class="itch-embed" frameborder="0" loading="lazy" src="https://itch.io/embed/4256333?bg_color=4f8193&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=7e97bf"></iframe>
                                     <div class="card-body px-0 pb-0">
                                         <h5 class="card-title mt-3">Project Cubot</h5>
                                         <p class="card-text text-body small">2º Lugar na segunda SenacJam de 2025.</p>
@@ -179,7 +187,7 @@
                             </div>
                             <div class="col-md-6 col-lg-6">
                                 <div class="pixel-card p-3 h-100">
-                                    <iframe class="itch-embed" frameborder="0" src="https://itch.io/embed/4256690?bg_color=61841c&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=4db59f" width="552" height="167"><a href="https://euromir.itch.io/capy-climber">Capy Climber by Euromir</a></iframe>
+                                    <iframe class="itch-embed" frameborder="0" loading="lazy" src="https://itch.io/embed/4256690?bg_color=61841c&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=4db59f"></iframe>
                                     <div class="card-body px-0 pb-0">
                                         <h5 class="card-title mt-3">Capy Climber</h5>
                                         <p class="card-text text-body small">Projeto acadêmico sobre IA.</p>
@@ -192,11 +200,12 @@
                         </div>
                     </div>
 
+                    <!-- Quarto conjunto de projetos do carrossel -->
                     <div class="carousel-item">
                         <div class="row g-4 justify-content-center px-4">
                             <div class="col-md-6 col-lg-6">
                                 <div class="pixel-card p-3 h-100">
-                                    <iframe class="itch-embed" frameborder="0" src="https://itch.io/embed/2964212?bg_color=ddd0ac&amp;fg_color=000000&amp;link_color=986e6e&amp;border_color=c4c2ae" width="552" height="167"><a href="https://euromir.itch.io/spectral-detectives">Spectral Detectives by Euromir, Ticco, Starbit</a></iframe>
+                                    <iframe class="itch-embed" frameborder="0" loading="lazy" src="https://itch.io/embed/2964212?bg_color=ddd0ac&amp;fg_color=000000&amp;link_color=986e6e&amp;border_color=c4c2ae"></iframe>
                                     <div class="card-body px-0 pb-0">
                                         <h5 class="card-title mt-3">Spectral Detectives</h5>
                                         <p class="card-text text-body small">Visual novel de mistério.</p>
@@ -209,7 +218,8 @@
                         </div>
                     </div>
 
-                    </div>
+                </div>
+                
                 <button class="carousel-control-prev custom-carousel-btn" type="button" data-bs-target="#itchCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
@@ -221,26 +231,25 @@
             </div>
         </section>
 
+        <!-- Projeto atual em desenvolvimento e objetivo de pesquisa/TCC -->
         <section class="container mt-5 pt-5" id="futuros">
             <h2 class="section-title text-center">Projetos em Desenvolvimento</h2>
             <div class="row mt-4 align-items-center justify-content-center">
-                
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <div class="pixel-image-placeholder d-flex align-items-center justify-content-center" style="min-height: 350px;">
-                        <img src="imgs/Witching Book - Logo.png" alt="Imagem do projeto em desenvolvimento" class="pixel-image-real">
+                        <img src="imgs/Witching Book - Logo.png" alt="Imagem do projeto em desenvolvimento" class="pixel-image-real" onerror="this.onerror=null; this.src='https://placehold.co/400x400/140028/00f3ff?text=Imagem+Indisponivel'">
                     </div>
                 </div>
-
                 <div class="col-lg-7">
                     <div class="pixel-box p-4 h-100 d-flex flex-column justify-content-center">
                         <h3 class="highlight-text title-text fs-4 mb-4">Witchy: Book of Dimensions</h3>
                         <p class="text-body mb-4">Meu Projeto acadêmico em desenvolvimento atual, ele faz parte da parte prática da minha tese de TCC. O projeto explora o conceito de realidades paralelas na alteração de dimensões.</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
+        <!-- Links diretos para contato e perfis externos -->
         <section class="container mt-5 pt-5 mb-5" id="contato">
             <h2 class="section-title text-center">Contato</h2>
             <div class="row justify-content-center mt-4">
@@ -260,8 +269,9 @@
             </div>
         </section>
 
+        <!-- Rodapé com créditos e ano do portfólio -->
         <footer class="text-center py-5">
-            <p class="mb-0 text-body">&copy; 2026 Sly Frog Studios - Vinicius Rubim Apolonio</p>
+            <p class="mb-0 text-body"><span class="copyright-symbol">&copy;</span> 2026 Sly Frog Studios - Vinicius Rubim Apolonio</p>
         </footer>
     </div>
 
